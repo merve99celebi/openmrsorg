@@ -25,4 +25,7 @@ public class LoginPage extends ReusableMethods {
 
     @FindBy(id = "loginButton")
     public WebElement loginBtn;
+
+    @FindBy(xpath = "//div[@id='apps']/a[1]")
+    public WebElement findPatientBtn;
 }
