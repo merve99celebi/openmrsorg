@@ -17,6 +17,4 @@ public class HomePage extends ReusableMethods {
 
     @FindBy(xpath = "//a[@class='zak-button']")
     public WebElement demoBtn;
-
-
 }
