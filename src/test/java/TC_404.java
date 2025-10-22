@@ -30,10 +30,10 @@ public class TC_404 extends BaseDriver {
         hp.myClick(dp.openMrs3Btn);
         wait.until(ExpectedConditions.elementToBeClickable(lp.verifyLoginPage));
         lp.mySendKeys(lp.userNameInput, "admin");
-        lp.myClick(lp.continueBtn);
+        //lp.myClick(lp.);
         lp.mySendKeys(lp.passwordInput, "Admin123");
         ReusableMethods.threadWait(2);
-        lp.myClick(lp.loginBtn);
+        //lp.myClick(lp.);
         rgp.myClick(rgp.addPatientBtn);
         rgp.mySendKeys(rgp.firstName, "marc");
         rgp.mySendKeys(rgp.familyName, "marces");
