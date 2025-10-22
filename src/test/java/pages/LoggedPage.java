@@ -3,20 +3,17 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
-public class HomePage extends ReusableMethods {
-
-    public HomePage() {
+public class LoggedPage extends ReusableMethods {
+    public LoggedPage(){
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath = "//div/h1/span")
-    public WebElement homePageText;
-
-    @FindBy(xpath = "//a[@class='zak-button']")
-    public WebElement demoBtn;
+    @FindBy(linkText = "Clinic")
+    public WebElement verifyClinicText;
 
 
 }

@@ -12,21 +12,18 @@ public class LoginPage extends ReusableMethods{
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath= "//form[@id='login-form']/fieldset/legend")
+    @FindBy(xpath= "//label[@for='username']")
     public WebElement verifyLoginPage;
 
     @FindBy(id = "username")
     public WebElement userNameInput;
 
+    @FindBy(css = "button[class^='-esm-login']")
+    private WebElement continueBtn;
+
     @FindBy(id = "password")
     public WebElement passwordInput;
 
-    @FindBy(id = "Outpatient Clinic")
-    public WebElement outpatientBtn;
-
-    @FindBy(id = "loginButton")
-    public WebElement loginBtn;
-
-    @FindBy(xpath = "//div[@id='apps']/a[1]")
-    public WebElement findPatientBtn;
+    @FindBy(css = "button[class^='-esm-login']")
+    private WebElement loginBtn;
 }

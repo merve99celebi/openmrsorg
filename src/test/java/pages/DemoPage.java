@@ -6,17 +6,12 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
-public class HomePage extends ReusableMethods {
+public class DemoPage extends ReusableMethods {
 
-    public HomePage() {
+    public DemoPage(){
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath = "//div/h1/span")
-    public WebElement homePageText;
-
-    @FindBy(xpath = "//a[@class='zak-button']")
-    public WebElement demoBtn;
-
-
+    @FindBy(xpath = "(//span[@class='elementor-button-text'])[3]")
+    public WebElement openMrs3Btn;
 }
