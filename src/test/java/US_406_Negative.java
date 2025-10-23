@@ -1,13 +1,10 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import pages.*;
 import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
-public class US_406 extends BaseDriver {
-
+public class US_406_Negative extends BaseDriver {
     HomePage homePage;
     LoginPage loginPage;
     DemoPage demoPage;
@@ -15,7 +12,7 @@ public class US_406 extends BaseDriver {
     PatientInfoPage patientP;
 
     @Test
-    public void searchPatient() {
+    public void searchPatientNegative(){
         homePage = new HomePage();
         loginPage = new LoginPage();
         demoPage = new DemoPage();
@@ -50,16 +47,14 @@ public class US_406 extends BaseDriver {
         loggedPage.myClick(loggedPage.searchBtn);
 
         wait.until(ExpectedConditions.visibilityOf(loggedPage.searchBarInput));
-        String patientFullname = "David";
+        String patientFullname = "asdfg";
         loggedPage.mySendKeys(loggedPage.searchBarInput, patientFullname);
 
-        wait.until(ExpectedConditions.visibilityOfAllElements(loggedPage.searchResultsRow));
-        loggedPage.myClick(loggedPage.searchResultsRow.get(
-                (int)(Math.random() * loggedPage.searchResultsRow.size())));
+        loggedPage.verifyContainsText(loggedPage.noPatientMessage, "Sorry, no patient charts were found");
 
-        wait.until(ExpectedConditions.visibilityOf(patientP.patientSummaryBtn));
-        patientP.verifyContainsText(patientP.patientSummaryBtn, "Patient summary");
 
-        patientP.myClick(patientP.actionsBtn);
+        tearDown();
+
+
     }
 }
