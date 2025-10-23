@@ -11,6 +11,7 @@ public class US_407 extends BaseDriver {
     private LoginPage loginP;
     private LoggedPage loggedP;
     private PatientInfoPage patientP;
+    String patientFullname = "Ibrahim Huseynli";
 
     @BeforeClass
     public void setupPages() {
@@ -45,7 +46,6 @@ public class US_407 extends BaseDriver {
         loggedP.myClick(loggedP.searchBtn);
 
         wait.until(ExpectedConditions.visibilityOf(loggedP.searchBarInput));
-        String patientFullname = "Ibrahim Huseynli";
         loggedP.mySendKeys(loggedP.searchBarInput, patientFullname);
 
         wait.until(ExpectedConditions.visibilityOfAllElements(loggedP.searchResultsRow));

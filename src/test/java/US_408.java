@@ -14,6 +14,7 @@ public class US_408 extends BaseDriver {
     private DemoPage demoP;
     private LoginPage loginP;
     private LoggedPage loggedP;
+    String patientFullname = "Ibrahim Huseynli";
 
     @BeforeClass
     public void setupPages() {
@@ -46,7 +47,6 @@ public class US_408 extends BaseDriver {
         wait.until(ExpectedConditions.elementToBeClickable(loggedP.searchBtn));
         loggedP.myClick(loggedP.searchBtn);
 
-        String patientFullname = "Ibrahim Huseynli";
         wait.until(ExpectedConditions.visibilityOf(loggedP.searchBarInput));
         loggedP.mySendKeys(loggedP.searchBarInput, patientFullname);
 
@@ -56,6 +56,6 @@ public class US_408 extends BaseDriver {
                 Integer.parseInt(loggedP.totalResultsText.getText().replaceAll("[^0-9]",""));
         int searchResultsToINT = loggedP.searchResultsRow.size();
 
-        Assert.assertEquals(totalResultsToINT,searchResultsToINT,"Result Numbers don't match!");
+        Assert.assertEquals(totalResultsToINT,searchResultsToINT,"Result numbers don't match!");
     }
 }
