@@ -12,39 +12,20 @@ public class LoginPage extends ReusableMethods {
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(BaseDriver.driver, this);
     }
-
-    @FindBy(xpath= "//div[@class='cds--tile -esm-login__login__loginCard___iiPcZ'")
+    @FindBy(xpath = "//label[@for='username']")
     public WebElement verifyLoginPage;
 
     @FindBy(id = "username")
     public WebElement userNameInput;
 
+    @FindBy(css = "button[class^='-esm-login']")
+    public WebElement continueLoginBtn;
+
     @FindBy(id = "password")
     public WebElement passwordInput;
+}
 
-    @FindBy(id = "Outpatient Clinic")
-    public WebElement outpatientBtn;
 
-    @FindBy(id = "loginButton")
-    public WebElement loginBtn;
-
-    @FindBy(xpath = "//li[@id='Inpatient Ward']")
-    public WebElement verifyInpatientWard;
-
-    @FindBy(xpath = "//li[@id='Outpatient Clinic']")
-    public WebElement verifyOutpatientClinic;
-
-    @FindBy(xpath = "//li[@id='//li[@id='Isolation Ward']']")
-    public WebElement verifyIsolationWard;
-
-    @FindBy(xpath = "//li[@id='Pharmacy']")
-    public WebElement verifyPharmacy;
-
-    @FindBy(xpath = "//li[@id='Laboratory']")
-    public WebElement verifyLaboratory;
-
-    @FindBy(xpath = "//li[@id='Registration Desk']")
-    public WebElement verifyRegistrationDesk;
 
     @FindBy(xpath = "//div[@id='error-message']")
     public WebElement verifyInvalidMessage;

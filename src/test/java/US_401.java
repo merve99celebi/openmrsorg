@@ -41,35 +41,7 @@ private DemoPage demoPage;
         wait.until(ExpectedConditions.visibilityOf(loginPage.verifyLoginPage));
         loginPage.verifyDisplayed(loginPage.verifyLoginPage, "LOGIN");
     }
-    /*
-    @Test(priority = 6, description = "Verify 'Inpatient Ward' is visible and clickable")
-    public void verifyInpatientWardBtn() {
-        loginPage.verifyDisplayed(loginPage.verifyInpatientWard, "Inpatient Ward");
-    }
-    @Test(priority = 7, description = "Verify 'Outpatient Clinic' is visible and clickable")
-    public void verifyOutpatientClinicBtn() {
-        loginPage.verifyDisplayed(loginPage.verifyOutpatientClinic, "Outpatient Clinic");
-    }
-    @Test(priority = 8, description = "Verify 'Isolation Ward' is visible and clickable")
-    public void verifyIsolationWardBtn() {
-        loginPage.verifyDisplayed(loginPage.verifyIsolationWard, "Isolation Ward");
-    }
-    @Test(priority = 9, description = "Verify 'Pharmacy' is visible and clickable")
-    public void verifyPharmacyBtn() {
-        loginPage.verifyDisplayed(loginPage.verifyPharmacy, "Pharmacy");
-    }
-    @Test(priority = 10, description = "Verify 'Laboratory' is visible and clickable")
-    public void verifyLaboratoryBtn() {
-        loginPage.verifyDisplayed(loginPage.verifyLaboratory, "Laboratory");
-    }
-    @Test(priority = 11, description = "Verify 'Registration Desk' is visible and clickable")
-    public void verifyRegistrationDeskBtn() {
-        loginPage.verifyDisplayed(loginPage.verifyRegistrationDesk, "Registration Desk");
-    }
-    @Test(priority = 12, description = "Click on 'Inpatient Ward' button")
-    public void clickInpatientWardBtn() {
-        loginPage.myClick(loginPage.verifyInpatientWard);
-    }  */
+
     @Test(priority = 13, description = "Click 'Login' button")
     public void clickLoginBtn() {
         loginPage.myClick(loginPage.loginBtn);
