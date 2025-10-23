@@ -9,24 +9,19 @@ import utilities.ReusableMethods;
 
     public class LoginPage extends ReusableMethods {
 
-        public LoginPage(WebDriver driver) {
-            PageFactory.initElements(BaseDriver.driver, this);
-        }
-
-        @FindBy(xpath = "//label[@for='username']")
-        public WebElement verifyLoginPage;
-
-        @FindBy(id = "username")
-        public WebElement userNameInput;
-
-        @FindBy(css = "button[class^='-esm-login']")
-        public WebElement continueLoginBtn;
-
-        @FindBy(id = "password")
-        public WebElement passwordInput;
-
-        @FindBy(xpath = "//div[@class='cds--inline-notification__title']")
-        public WebElement errorMessage;
-
+    public LoginPage() {
+        PageFactory.initElements(BaseDriver.driver, this);
     }
 
+    @FindBy(xpath = "//label[@for='username']")
+    public WebElement verifyLoginPage;
+
+    @FindBy(id = "username")
+    public WebElement userNameInput;
+
+    @FindBy(css = "button[class^='-esm-login']")
+    public WebElement continueLoginBtn;
+
+    @FindBy(id = "password")
+    public WebElement passwordInput;
+}

@@ -9,7 +9,7 @@ import utilities.ReusableMethods;
 
 public class HomePage extends ReusableMethods {
 
-    public HomePage(WebDriver driver) {
+    public HomePage() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
