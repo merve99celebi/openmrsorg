@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,7 +9,7 @@ import utilities.ReusableMethods;
 
 public class HomePage extends ReusableMethods {
 
-    public HomePage() {
+    public HomePage(WebDriver driver) {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
