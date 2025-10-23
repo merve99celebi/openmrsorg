@@ -1,6 +1,7 @@
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.DemoPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.BaseDriver;
@@ -9,7 +10,7 @@ public class US_401 extends BaseDriver {
 
     private HomePage homePage;
     private LoginPage loginPage;
-
+private DemoPage demoPage;
     @BeforeClass
     public void pages() {
         homePage = new HomePage(driver);
@@ -25,15 +26,15 @@ public class US_401 extends BaseDriver {
         wait.until(ExpectedConditions.elementToBeClickable(homePage.demoBtn));
         homePage.myClick(homePage.demoBtn);
     }
-    @Test(priority = 3, description = "Click on 'Explore OpenMRS2' button")
-    public void clickExploreOpenMRS2Btn() {
-        wait.until(ExpectedConditions.elementToBeClickable(homePage.exploreOpenMRS2Btn));
-        homePage.myClick(homePage.exploreOpenMRS2Btn);
+    @Test(priority = 3, description = "Click on 'Explore OpenMRS3' button")
+    public void clickExploreOpenMRS3Btn() {
+        wait.until(ExpectedConditions.elementToBeClickable(demoPage.exploreOpenMRS3Btn));
+        demoPage.myClick(demoPage.exploreOpenMRS3Btn);
     }
     @Test(priority = 4, description = "Click on 'Enter the OpenMRS2 demo' button")
-    public void clickEnterOpenMRS2Btn() {
-        wait.until(ExpectedConditions.elementToBeClickable(homePage.openMrs2Btn));
-        homePage.myClick(homePage.openMrs2Btn);
+    public void clickEnterOpenMRS3Btn() {
+        wait.until(ExpectedConditions.elementToBeClickable(demoPage.openMrs3Btn));
+        demoPage.myClick(demoPage.openMrs3Btn);
     }
     @Test(priority = 5, description = "Verify that Login page is visible")
     public void verifyLoginPage() {

@@ -22,8 +22,7 @@ public class HomePage extends ReusableMethods {
     @FindBy(xpath = "(//span[@class='elementor-button-text'])[2]")
     public WebElement exploreOpenMRS2Btn;
 
-    @FindBy(xpath = "(//span[@class='elementor-button-text'])[4]")
-    public WebElement openMrs2Btn;
+
 
     @FindBy(xpath = "//div[@class='row']/div/h4")
     public WebElement LoggedInHomePageText;

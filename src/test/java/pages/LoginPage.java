@@ -13,7 +13,7 @@ public class LoginPage extends ReusableMethods {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath= "//form[@id='login-form']/fieldset/legend")
+    @FindBy(xpath= "//div[@class='cds--tile -esm-login__login__loginCard___iiPcZ'")
     public WebElement verifyLoginPage;
 
     @FindBy(id = "username")
