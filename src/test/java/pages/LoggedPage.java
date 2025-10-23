@@ -27,4 +27,7 @@ public class LoggedPage extends ReusableMethods {
 
     @FindBy(xpath = "//a/div[2]/div[1]/div/span")
     public List<WebElement> searchResultsRow;
+
+    @FindBy(xpath = "(//div[@class='cds--layer-two']/div/p)[1]")
+    public WebElement noPatientMessage;
 }
