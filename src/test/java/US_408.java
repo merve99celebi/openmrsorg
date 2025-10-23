@@ -10,44 +10,32 @@ import utilities.BaseDriver;
 import utilities.ConfigReader;
 
 public class US_408 extends BaseDriver {
-    private HomePage homeP;
-    private DemoPage demoP;
-    private LoginPage loginP;
-    private LoggedPage loggedP;
     String patientFullname = "Ibrahim Huseynli";
-
-    @BeforeClass
-    public void setupPages() {
-        driver.get(ConfigReader.getProperty("url"));
-
-        homeP = new HomePage();
-        demoP = new DemoPage();
-        loginP = new LoginPage();
-        loggedP = new LoggedPage();
-    }
 
     @Test
     public void patientListing() {
-        homeP.verifyDisplayed(homeP.homePageText, "OpenMRS");
+        driver.get(ConfigReader.getProperty("url"));
+
+        HomePage homeP = new HomePage();
+        DemoPage demoP = new DemoPage();
+        LoginPage loginP = new LoginPage();
+        LoggedPage loggedP = new LoggedPage();
+
+        homeP.verifyContainsText(homeP.homePageText, "OpenMRS");
         homeP.myClick(homeP.demoBtn);
 
         demoP.verifyContainsText(demoP.demoPageText, "Demo");
         demoP.jsClick(demoP.openMrs3Btn);
 
-        wait.until(ExpectedConditions.visibilityOf(loginP.verifyLoginPage));
-        loginP.verifyDisplayed(loginP.verifyLoginPage, "Username");
+        loginP.verifyContainsText(loginP.verifyLoginPage, "Username");
         loginP.mySendKeys(loginP.userNameInput, ConfigReader.getProperty("usernameValid"));
         loginP.myClick(loginP.continueLoginBtn);
         loginP.mySendKeys(loginP.passwordInput, ConfigReader.getProperty("passwordValid"));
         loginP.myClick(loginP.continueLoginBtn);
 
-        wait.until(ExpectedConditions.visibilityOf(loggedP.verifyClinicText));
-        loggedP.verifyDisplayed(loggedP.verifyClinicText,"Clinic");
+        loggedP.verifyContainsText(loggedP.verifyClinicText,"Clinic");
 
-        wait.until(ExpectedConditions.elementToBeClickable(loggedP.searchBtn));
         loggedP.myClick(loggedP.searchBtn);
-
-        wait.until(ExpectedConditions.visibilityOf(loggedP.searchBarInput));
         loggedP.mySendKeys(loggedP.searchBarInput, patientFullname);
 
         wait.until(ExpectedConditions.visibilityOf(loggedP.totalResultsText));
