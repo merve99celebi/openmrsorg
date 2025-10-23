@@ -1,6 +1,5 @@
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.DemoPage;
 import pages.HomePage;
