@@ -37,6 +37,5 @@ public class US_405 extends BaseDriver {
         homePage.myClick(homePage.MyAccountBtn);
         homePage.myClick(homePage.changePasswordBtn);
         homePage.myClick(homePage.cancelBtn);
-
     }
 }

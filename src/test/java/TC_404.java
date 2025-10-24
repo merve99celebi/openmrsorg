@@ -57,6 +57,5 @@ public class TC_404 extends BaseDriver {
         rgp.myClick(rgp.registerPatientBtn);
 
         Assert.assertTrue(driver.findElement(By.xpath("//button[@aria-label='Add patient']")).isDisplayed());
-
     }
 }
