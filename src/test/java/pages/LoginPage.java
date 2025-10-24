@@ -24,4 +24,7 @@ import utilities.ReusableMethods;
 
     @FindBy(id = "password")
     public WebElement passwordInput;
+
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement loginbtn;
 }
