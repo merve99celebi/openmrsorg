@@ -8,12 +8,10 @@ import utilities.ReusableMethods;
 
 public class US_405 extends BaseDriver {
 
-
-
     @Test
-    public void myAccountChange(){
-        HomePage  homePage=new HomePage();
-        LoginPage loginPage=new LoginPage();
+    public void myAccountChange() {
+        HomePage homePage = new HomePage();
+        LoginPage loginPage = new LoginPage();
         DemoPage demoPage = new DemoPage();
 
         driver.get("https://openmrs.org/");
@@ -41,5 +39,4 @@ public class US_405 extends BaseDriver {
         homePage.myClick(homePage.cancelBtn);
 
     }
-
 }
