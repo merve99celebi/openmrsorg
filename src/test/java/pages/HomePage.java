@@ -18,4 +18,19 @@ public class HomePage extends ReusableMethods {
 
     @FindBy(xpath = "//a[@class='zak-button']")
     public WebElement demoBtn;
+
+    @FindBy(xpath = "//button[@name='User']")
+    public WebElement MyAccountBtn;
+
+    @FindBy(xpath = "//a[@aria-label='Change language']/div/following-sibling::button[1]")
+    public WebElement changeLanguageBtn;
+
+    @FindBy(xpath = "//button[@class='cds--btn cds--btn--secondary']")
+    public WebElement cancelBtn;
+
+    @FindBy(xpath = "//a[@aria-label='Change password']/div/following-sibling::button[1]")
+    public  WebElement changePasswordBtn;
+
+
+
 }
